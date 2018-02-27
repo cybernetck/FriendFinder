@@ -1,0 +1,45 @@
+.top , .bottom {
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.btn {
+    width:100%;
+    padding: 5px;
+}
+
+/* .form-control::-webkit-input-placeholder {
+    opacity: .3;
+    transition-duration: 800ms;
+    }
+
+.form-control::-webkit-input-placeholder:focus {
+    color:blue;
+    opacity: .9;
+    transition-duration: 800ms;
+    } */
+
+.card-title .glyphicon {
+    visibility:hidden;
+    float:right;
+}
+
+.card {
+    width: 40rem;
+    max-width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    margin-bottom:10px;
+    box-shadow: 2px 4px 4px grey;
+    transition-duration: 500ms;
+}
+.card:hover{
+  
+        box-shadow: 9px 12px 10px;
+        transition-duration: 1000ms;
+}
+.chosen-select {
+    margin: 0 auto;
+}

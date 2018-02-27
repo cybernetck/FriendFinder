@@ -1,6 +1,7 @@
 //NPM setup
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 //Server and port
 var app = express();
@@ -18,7 +19,7 @@ require("./app/routing/apiRoutes.js")(app);
 require("./app/routing/htmlRoutes.js")(app);
 
 //simplifies path stuffs
-// app.use(express.static(__dirname + '/app'));
+app.use('/app', express.static(path.join(__dirname, 'app')));
 
 // Starts the server to begin listening
 // =============================================================
