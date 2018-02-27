@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+     
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
             FriendFinder
@@ -8,23 +9,35 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous">
-        <style>
-           .form-control::-webkit-input-placeholder{
-                    opacity: .3;
-                    transition-duration: 800ms;
-                }
-                .form-control::-webkit-input-placeholder:focus {
-                    color:blue;
-                    opacity: .9;
-                    transition-duration: 800ms;
-                }
-        </style>
+          
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+
+            <!-- Latest compiled and minified CSS & JS -->
+        
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="https://code.jquery.com/jquery.js"></script>
+        
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+          <!-- Font Awesome Glyphicons -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        
+          <!-- Chosen -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/app/public/style.css" />
+
     </head>
+
         <body>
-            <h2> Survey Questions </h2>
+            <div class="top">
+                <h2> Survey Questions </h2>
+             </div>
             <hr/>
         
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
                 <form onkeypress="return event.keyCode !=13;">
                     <div class="form-group">
@@ -35,7 +48,215 @@
                             <label for="imageLink">Link to Photo Image (Required) </label>
                             <input type="link" class="form-control" id="imageLink" aria-describedby="name" placeholder="Image Link Here...">
                         </div>
-                </form>
+                </form> -->
+    
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 1
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+        
+                            <h4 class="card-text"> Role-Playing Games  are the only type game I’d play. </h4>
+                            <select class="chosen-select" id="question1">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Question 2
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                </h2>
+                                <hr>
+            
+                                <h4 class="card-text">First Person Shooters are the best type of games since sliced bread.</h4>
+                                <select class="chosen-select" id="question1">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 text-center">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">Question 3
+                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    </h2>
+                                    <hr>
+                
+                                    <h4 class="card-text"> I enjoy playing Candy Crush while commuting to work. </h4>
+                                    <select class="chosen-select" id="question1">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+        </div>
+
+        <div class="container-fluid">
+                <div class="row">
+    
+                    <div class="col-md-4 col-sm-12 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Question 4
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                </h2>
+                                <hr>
+            
+                                <h4 class="card-text"> I lose track of time when I play a game that I enjoy. </h4>
+                                <select class="chosen-select" id="question1">
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-4 col-sm-12 text-center">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">Question 5
+                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    </h2>
+                                    <hr>
+                
+                                    <h4 class="card-text"> A game night is not complete without a round of Uno. </h4>
+                                    <select class="chosen-select" id="question1">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4 col-sm-12 text-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2 class="card-title">Question 6
+                                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                        </h2>
+                                        <hr>
+                    
+                                        <h4 class="card-text"> The only good games where made before 1995. </h4>
+                                        <select class="chosen-select" id="question1">
+                                            <option value=""></option>
+                                            <option value="1">1 (Strongly Disagree)</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5 (Strongly Agree)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+    
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                    <div class="row">
+        
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">Question 7
+                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    </h2>
+                                    <hr>
+                
+                                    <h4 class="card-text"> I'd rather play Dungeons and Dragons with real people. </h4>
+                                    <select class="chosen-select" id="question1">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-4 col-sm-12 text-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2 class="card-title">Question 8
+                                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                        </h2>
+                                        <hr>
+                    
+                                        <h4 class="card-text"> I'm all about cutting edge technology - VR headsets for me!</h4>
+                                        <select class="chosen-select" id="question1">
+                                            <option value=""></option>
+                                            <option value="1">1 (Strongly Disagree)</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5 (Strongly Agree)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-4 col-sm-12 text-center">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h2 class="card-title">Question 9
+                                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                            </h2>
+                                            <hr>
+                        
+                                            <h4 class="card-text"><h4>I refuse to play any online game, and prefer to play alone. </h4>
+                                            <select class="chosen-select" id="question1">
+                                                <option value=""></option>
+                                                <option value="1">1 (Strongly Disagree)</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5 (Strongly Agree)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                    </div>
+                </div>
+            <div class="bottom">
                 <button id="updateAPI" class="btn btn-primary mb-2" aria-label="Submit Survey"> 
                         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                         Submit
@@ -46,14 +267,31 @@
                         View Data
                     </button>
                 </a>
-        </div>
-        </div>
-        <hr/>
+            </div>
 
-        <div class="dataSection">
+        <script type="text/javascript">
+        //var friendSurvey = require("./data/friends.js");
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
+        $("#updateAPI").on("click", function(event) {
+        event.preventDefault();
+        var newCharacter = {
+            name: $("#nameInput").val().trim(),
+            imgURL: $("#imageLink").val().trim()
+        };
+            // return newCharacter;
+            console.log(newCharacter);
+
+         //
+      $.post("/api/friends", newCharacter)
+       .then(function(data) {
+            console.log(data);
+            alert("Survey captured...");
+      });
+
+    });
+
+        </script>
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"

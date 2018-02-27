@@ -1,0 +1,33 @@
+.top , .bottom {
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.form-control::-webkit-input-placeholder {
+    opacity: .3;
+    transition-duration: 800ms;
+    }
+
+.form-control::-webkit-input-placeholder:focus {
+    color:blue;
+    opacity: .9;
+    transition-duration: 800ms;
+    }
+
+.card-title .glyphicon {
+    visibility:hidden;
+    float:right;
+}
+
+.card {
+    width: 40rem;
+    max-width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    margin-bottom:10px;
+}
+.chosen-select {
+    margin: 0 auto;
+}
