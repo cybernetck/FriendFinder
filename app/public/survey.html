@@ -37,19 +37,64 @@
              </div>
             <hr/>
         
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <form onkeypress="return event.keyCode !=13;">
-                    <div class="form-group">
-                        <label for="nameInput">Name (Required) </label>
-                        <input type="text" class="form-control" id="nameInput" aria-describedby="name" placeholder="Enter name...">
-                    </div>
-                    <div class="form-group">
-                            <label for="imageLink">Link to Photo Image (Required) </label>
-                            <input type="link" class="form-control" id="imageLink" aria-describedby="name" placeholder="Image Link Here...">
+            <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="successLabel">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                Survey completed!
+                            </h2>
                         </div>
-                </form> -->
-    
+                        <div class="modal-body">
+                        <h2 id="match"></h2>
+                        <div id="imgLink"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"> Dismiss </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="resultLabel">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    Survey not complete
+                                </h2>
+                            </div>
+                            <div class="modal-body">
+                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"> Dismiss </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+
+                <div class="modal fade" id="notCompleteModal" tabindex="-1" role="dialog" aria-labelledby="notCompleteLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title" id="notCompleteLabel">
+                                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                        Survey not complete
+                                    </h2>
+                                </div>
+                                <div class="modal-body">
+                                    <h2> Please fill out the survey to continue </h2>
+                                    <h2> Thanks! </h2>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         <div class="container-fluid">
             <div class="row">
 
@@ -61,7 +106,7 @@
                             </h2>
                             <hr>
         
-                            <h4 class="card-text"> Role-Playing Games  are the only type game I’d play. </h4>
+                            <h4 class="card-text"> Role-Playing Games are the only type game I’d play. </h4>
                             <select class="chosen-select" id="question1">
                                 <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +128,7 @@
                                 <hr>
             
                                 <h4 class="card-text">First Person Shooters are the best type of games since sliced bread.</h4>
-                                <select class="chosen-select" id="question1">
+                                <select class="chosen-select" id="question2">
                                     <option value=""></option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
@@ -104,7 +149,7 @@
                                     <hr>
                 
                                     <h4 class="card-text"> I enjoy playing Candy Crush while commuting to work. </h4>
-                                    <select class="chosen-select" id="question1">
+                                    <select class="chosen-select" id="question3">
                                         <option value=""></option>
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -131,7 +176,7 @@
                                 <hr>
             
                                 <h4 class="card-text"> I lose track of time when I play a game that I enjoy. </h4>
-                                <select class="chosen-select" id="question1">
+                                <select class="chosen-select" id="question4">
                                     <option value=""></option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
@@ -152,7 +197,7 @@
                                     <hr>
                 
                                     <h4 class="card-text"> A game night is not complete without a round of Uno. </h4>
-                                    <select class="chosen-select" id="question1">
+                                    <select class="chosen-select" id="question5">
                                         <option value=""></option>
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -173,7 +218,7 @@
                                         <hr>
                     
                                         <h4 class="card-text"> The only good games where made before 1995. </h4>
-                                        <select class="chosen-select" id="question1">
+                                        <select class="chosen-select" id="question6">
                                             <option value=""></option>
                                             <option value="1">1 (Strongly Disagree)</option>
                                             <option value="2">2</option>
@@ -200,7 +245,7 @@
                                     <hr>
                 
                                     <h4 class="card-text"> I'd rather play Dungeons and Dragons with real people. </h4>
-                                    <select class="chosen-select" id="question1">
+                                    <select class="chosen-select" id="question7">
                                         <option value=""></option>
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -221,7 +266,7 @@
                                         <hr>
                     
                                         <h4 class="card-text"> I'm all about cutting edge technology - VR headsets for me!</h4>
-                                        <select class="chosen-select" id="question1">
+                                        <select class="chosen-select" id="question8">
                                             <option value=""></option>
                                             <option value="1">1 (Strongly Disagree)</option>
                                             <option value="2">2</option>
@@ -241,8 +286,8 @@
                                             </h2>
                                             <hr>
                         
-                                            <h4 class="card-text"><h4>I refuse to play any online game, and prefer to play alone. </h4>
-                                            <select class="chosen-select" id="question1">
+                                            <h4 class="card-text"><h4>I refuse to play any online game; need to be in the same space as others! </h4>
+                                            <select class="chosen-select" id="question9">
                                                 <option value=""></option>
                                                 <option value="1">1 (Strongly Disagree)</option>
                                                 <option value="2">2</option>
@@ -267,30 +312,95 @@
                         View Data
                     </button>
                 </a>
+                <div class="bottom">
+                        <button id="resetBTN" class="btn btn-primary mb-2" aria-label="Reset Survey"> 
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                                Reset
+                        </button>
             </div>
 
         <script type="text/javascript">
-        //var friendSurvey = require("./data/friends.js");
 
-        $("#updateAPI").on("click", function(event) {
-        event.preventDefault();
-        var newCharacter = {
-            name: $("#nameInput").val().trim(),
-            imgURL: $("#imageLink").val().trim()
-        };
-            // return newCharacter;
-            console.log(newCharacter);
+var userSurvey;
+var showMatch=false;
 
-         //
-      $.post("/api/friends", newCharacter)
-       .then(function(data) {
-            console.log(data);
-            alert("Survey captured...");
-      });
+    function reset() {
 
+        $("#question1").val('');
+        $("#question2").val('');
+        $("#question3").val('');
+        $("#question4").val('');
+        $("#question5").val('');
+        $("#question6").val('');
+        $("#question7").val('');
+        $("#question8").val('');
+        $("#question9").val('');
+        showResult=false;
+    };
+
+    $("#resetBTN").on("click", function (event) {
+        reset();
+        showResult=false;
     });
 
-        </script>
+    var checkFields = function () {
+        if ($("#question1").val() !== '' &&
+            $("#question2").val() !== '' &&
+            $("#question3").val() !== '' &&
+            $("#question4").val() !== '' &&
+            $("#question5").val() !== '' &&
+            $("#question6").val() !== '' &&
+            $("#question7").val() !== '' &&
+            $("#question8").val() !== '' &&
+            $("#question9").val() !== '') {
+            return true;
+        }
+        else
+            return false;
+    };
+
+    $("#updateAPI").on("click", function (event) {
+
+        event.preventDefault();
+
+        userSurvey = {
+            question1: $("#question1").val().trim(),
+            question2: $("#question2").val().trim(),
+            question3: $("#question3").val().trim(),
+            question4: $("#question4").val().trim(),
+            question5: $("#question5").val().trim(),
+            question6: $("#question6").val().trim(),
+            question7: $("#question7").val().trim(),
+            question8: $("#question8").val().trim(),
+            question9: $("#question9").val().trim()
+        };
+
+
+        // if (!checkFields()) {
+        //     $("#notCompleteModal").modal("show");
+        // }
+        
+        if (checkFields)
+            {
+            $.post("/api/friends", userSurvey)
+                .done(function (data) {
+                    console.log(data);
+                    console.log(data.name);
+                    console.log(data.link);
+                    $('#match').html(data.name);
+                    $('#imgLink').html(data.link);
+                    showMatch=true;
+                });
+
+            }
+            else
+            $("#notCompleteModal").modal("show");
+    });
+
+        if (showMatch)
+            $("#successModal").modal("show");
+
+</script>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
