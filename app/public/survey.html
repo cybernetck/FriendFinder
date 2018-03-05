@@ -302,7 +302,10 @@
 
         <script type="text/javascript">
             var userSurvey;
-          
+
+            /**
+             * Function to reset the screen by changing all survey values to 'blank'
+             * */
             function reset() {
 
                 $("#question1").val('');
@@ -317,10 +320,17 @@
 
             };
 
+            /**
+             * Anonymous function upon assigned to Submit Button on Click
+             * @param {Object} - Event object. this is needed listen for key events
+             */
             $("#resetBTN").on("click", function (event) {
                 reset();
             });
 
+            /**
+             * Assignment function - check if any of the survey fields are blank
+             */
             var checkFields = function () {
                 if ($("#question1").val() !== '' &&
                     $("#question2").val() !== '' &&
@@ -336,6 +346,10 @@
                     return false;
             };
 
+            /**
+             * Anonymous function upon assigned to Submit Button on Click
+             * @param {Object} - Event object. this is needed listen for key events
+             */
             $("#updateAPI").on("click", function (event) {
 
                 event.preventDefault();
