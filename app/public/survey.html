@@ -1,101 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-     
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-            FriendFinder
-        </title>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous">
-          
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+<head>
 
-            <!-- Latest compiled and minified CSS & JS -->
-        
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-          <script src="https://code.jquery.com/jquery.js"></script>
-        
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        
-          <!-- Font Awesome Glyphicons -->
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-        
-          <!-- Chosen -->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-        
-        <link rel="stylesheet" type="text/css" href="/app/public/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        FriendFinder
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    
+    <!-- Latest compiled and minified CSS & JS -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
-    </head>
+    
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="/app/public/style.css" />
 
-        <body>
-            <div class="top">
-                <h2> Survey Questions </h2>
-             </div>
-            <hr/>
-        
-            <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="successLabel">
-                                <span class="glyphicon glyphicon-exclamation-sign"></span>
-                                Survey completed!
-                            </h2>
-                        </div>
-                        <div class="modal-body">
-                        <h2 id="match"></h2>
-                        <div id="imgLink"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"> Dismiss </button>
-                        </div>
-                    </div>
+</head>
+
+<body>
+
+    <div class="top">
+        <h2> Survey Questions </h2>
+    </div>
+
+    <hr/>
+
+    <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="resultLabel">
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                            Meet your new gaming buddy! 
+                    </h2>
+                </div>
+                <div class="modal-body">
+
+                        <h2 id="matchName"></h2>
+                        <div id="imgLink"> </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"> Dismiss </button>
                 </div>
             </div>
-                <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="modal-title" id="resultLabel">
-                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
-                                    Survey not complete
-                                </h2>
-                            </div>
-                            <div class="modal-body">
-                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"> Dismiss </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid">
+        </div>
+    </div>
 
-                <div class="modal fade" id="notCompleteModal" tabindex="-1" role="dialog" aria-labelledby="notCompleteLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2 class="modal-title" id="notCompleteLabel">
-                                        <span class="glyphicon glyphicon-exclamation-sign"></span>
-                                        Survey not complete
-                                    </h2>
-                                </div>
-                                <div class="modal-body">
-                                    <h2> Please fill out the survey to continue </h2>
-                                    <h2> Thanks! </h2>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="modal fade" id="notCompleteModal" tabindex="-1" role="dialog" aria-labelledby="notCompleteLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="notCompleteLabel">
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                        Survey Incomplete :(
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h3> Please complete the servey </h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
         <div class="container-fluid">
+            
             <div class="row">
 
                 <div class="col-md-4 col-sm-12 text-center">
@@ -105,7 +91,7 @@
                                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                             </h2>
                             <hr>
-        
+
                             <h4 class="card-text"> Role-Playing Games are the only type game I’d play. </h4>
                             <select class="chosen-select" id="question1">
                                 <option value=""></option>
@@ -120,15 +106,170 @@
                 </div>
 
                 <div class="col-md-4 col-sm-12 text-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Question 2
-                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                </h2>
-                                <hr>
-            
-                                <h4 class="card-text">First Person Shooters are the best type of games since sliced bread.</h4>
-                                <select class="chosen-select" id="question2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 2
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text">First Person Shooters are the best type of games since sliced bread.</h4>
+                            <select class="chosen-select" id="question2">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 3
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text"> I enjoy playing Candy Crush while commuting to work. </h4>
+                            <select class="chosen-select" id="question3">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 4
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text"> I lose track of time when I play a game that I enjoy. </h4>
+                            <select class="chosen-select" id="question4">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 5
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text"> A game night is not complete without a round of Uno. </h4>
+                            <select class="chosen-select" id="question5">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 6
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text"> The only good games where made before 1995. </h4>
+                            <select class="chosen-select" id="question6">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 7
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text"> I'd rather play Dungeons and Dragons with real people. </h4>
+                            <select class="chosen-select" id="question7">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 8
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text"> I'm all about cutting edge technology - VR headsets for me!</h4>
+                            <select class="chosen-select" id="question8">
+                                <option value=""></option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Question 9
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </h2>
+                            <hr>
+
+                            <h4 class="card-text">
+                                <h4>I refuse to play any online game; need to be in the same space as others! </h4>
+                                <select class="chosen-select" id="question9">
                                     <option value=""></option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
@@ -136,275 +277,105 @@
                                     <option value="4">4</option>
                                     <option value="5">5 (Strongly Agree)</option>
                                 </select>
-                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-12 text-center">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2 class="card-title">Question 3
-                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                    </h2>
-                                    <hr>
-                
-                                    <h4 class="card-text"> I enjoy playing Candy Crush while commuting to work. </h4>
-                                    <select class="chosen-select" id="question3">
-                                        <option value=""></option>
-                                        <option value="1">1 (Strongly Disagree)</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 (Strongly Agree)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                </div>
 
             </div>
+        <!-- </div> -->
+        <div class="bottom">
+            <button id="updateAPI" class="btn btn-primary mb-2" aria-label="Submit Survey">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                Submit
+            </button>
+            <a href="/api/friends">
+                <button id="viewAPI" class="btn btn-primary mb-2" aria-label="View Data">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    View Data
+                </button>
+            </a>
+            <button id="resetBTN" class="btn btn-primary mb-2" aria-label="Reset Survey">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    Reset
+            </button>
         </div>
 
-        <div class="container-fluid">
-                <div class="row">
-    
-                    <div class="col-md-4 col-sm-12 text-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">Question 4
-                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                </h2>
-                                <hr>
-            
-                                <h4 class="card-text"> I lose track of time when I play a game that I enjoy. </h4>
-                                <select class="chosen-select" id="question4">
-                                    <option value=""></option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="col-md-4 col-sm-12 text-center">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2 class="card-title">Question 5
-                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                    </h2>
-                                    <hr>
-                
-                                    <h4 class="card-text"> A game night is not complete without a round of Uno. </h4>
-                                    <select class="chosen-select" id="question5">
-                                        <option value=""></option>
-                                        <option value="1">1 (Strongly Disagree)</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 (Strongly Agree)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-md-4 col-sm-12 text-center">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h2 class="card-title">Question 6
-                                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                        </h2>
-                                        <hr>
-                    
-                                        <h4 class="card-text"> The only good games where made before 1995. </h4>
-                                        <select class="chosen-select" id="question6">
-                                            <option value=""></option>
-                                            <option value="1">1 (Strongly Disagree)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5 (Strongly Agree)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-    
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                    <div class="row">
-        
-                        <div class="col-md-4 col-sm-12 text-center">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2 class="card-title">Question 7
-                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                    </h2>
-                                    <hr>
-                
-                                    <h4 class="card-text"> I'd rather play Dungeons and Dragons with real people. </h4>
-                                    <select class="chosen-select" id="question7">
-                                        <option value=""></option>
-                                        <option value="1">1 (Strongly Disagree)</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5 (Strongly Agree)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="col-md-4 col-sm-12 text-center">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h2 class="card-title">Question 8
-                                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                        </h2>
-                                        <hr>
-                    
-                                        <h4 class="card-text"> I'm all about cutting edge technology - VR headsets for me!</h4>
-                                        <select class="chosen-select" id="question8">
-                                            <option value=""></option>
-                                            <option value="1">1 (Strongly Disagree)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5 (Strongly Agree)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="col-md-4 col-sm-12 text-center">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h2 class="card-title">Question 9
-                                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                            </h2>
-                                            <hr>
-                        
-                                            <h4 class="card-text"><h4>I refuse to play any online game; need to be in the same space as others! </h4>
-                                            <select class="chosen-select" id="question9">
-                                                <option value=""></option>
-                                                <option value="1">1 (Strongly Disagree)</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5 (Strongly Agree)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                    </div>
-                </div>
-            <div class="bottom">
-                <button id="updateAPI" class="btn btn-primary mb-2" aria-label="Submit Survey"> 
-                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                        Submit
-                </button>
-                <a href="/api/friends">
-                    <button id="viewAPI" class="btn btn-primary mb-2" aria-label="View Data"> 
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        View Data
-                    </button>
-                </a>
-                <div class="bottom">
-                        <button id="resetBTN" class="btn btn-primary mb-2" aria-label="Reset Survey"> 
-                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                                Reset
-                        </button>
-            </div>
-
         <script type="text/javascript">
+            var userSurvey;
+          
+            function reset() {
 
-var userSurvey;
-var showMatch=false;
+                $("#question1").val('');
+                $("#question2").val('');
+                $("#question3").val('');
+                $("#question4").val('');
+                $("#question5").val('');
+                $("#question6").val('');
+                $("#question7").val('');
+                $("#question8").val('');
+                $("#question9").val('');
 
-    function reset() {
+            };
 
-        $("#question1").val('');
-        $("#question2").val('');
-        $("#question3").val('');
-        $("#question4").val('');
-        $("#question5").val('');
-        $("#question6").val('');
-        $("#question7").val('');
-        $("#question8").val('');
-        $("#question9").val('');
-        showResult=false;
-    };
+            $("#resetBTN").on("click", function (event) {
+                reset();
+            });
 
-    $("#resetBTN").on("click", function (event) {
-        reset();
-        showResult=false;
-    });
+            var checkFields = function () {
+                if ($("#question1").val() !== '' &&
+                    $("#question2").val() !== '' &&
+                    $("#question3").val() !== '' &&
+                    $("#question4").val() !== '' &&
+                    $("#question5").val() !== '' &&
+                    $("#question6").val() !== '' &&
+                    $("#question7").val() !== '' &&
+                    $("#question8").val() !== '' &&
+                    $("#question9").val() !== '') {
+                    return true;
+                } else
+                    return false;
+            };
 
-    var checkFields = function () {
-        if ($("#question1").val() !== '' &&
-            $("#question2").val() !== '' &&
-            $("#question3").val() !== '' &&
-            $("#question4").val() !== '' &&
-            $("#question5").val() !== '' &&
-            $("#question6").val() !== '' &&
-            $("#question7").val() !== '' &&
-            $("#question8").val() !== '' &&
-            $("#question9").val() !== '') {
-            return true;
-        }
-        else
-            return false;
-    };
+            $("#updateAPI").on("click", function (event) {
 
-    $("#updateAPI").on("click", function (event) {
+                event.preventDefault();
 
-        event.preventDefault();
+                userSurvey = {
+                    question1: $("#question1").val().trim(),
+                    question2: $("#question2").val().trim(),
+                    question3: $("#question3").val().trim(),
+                    question4: $("#question4").val().trim(),
+                    question5: $("#question5").val().trim(),
+                    question6: $("#question6").val().trim(),
+                    question7: $("#question7").val().trim(),
+                    question8: $("#question8").val().trim(),
+                    question9: $("#question9").val().trim()
+                };
+                if (!checkFields){
+                    $("#notCompleteModal").modal('show');
+                }
+                else if (checkFields) {
+                    $.post("/api/friends", userSurvey)
+                        .done(function (data) {
+                            console.log(data);
+                            console.log(data.name);
+                            console.log(data.link);
+                            if (data.total){
+                                $('#matchName').html(data.name);
+                                $('#imgLink').html("<img src=" + "'" + data.link + "'" + +" height=175px"+">");
+                                $("#resultModal").modal('show');
+                            }
+                            else
+                                $("#notCompleteModal").modal('show');
+                        });
 
-        userSurvey = {
-            question1: $("#question1").val().trim(),
-            question2: $("#question2").val().trim(),
-            question3: $("#question3").val().trim(),
-            question4: $("#question4").val().trim(),
-            question5: $("#question5").val().trim(),
-            question6: $("#question6").val().trim(),
-            question7: $("#question7").val().trim(),
-            question8: $("#question8").val().trim(),
-            question9: $("#question9").val().trim()
-        };
+                }
+               
+            });
 
+        </script>
 
-        // if (!checkFields()) {
-        //     $("#notCompleteModal").modal("show");
-        // }
-        
-        if (checkFields)
-            {
-            $.post("/api/friends", userSurvey)
-                .done(function (data) {
-                    console.log(data);
-                    console.log(data.name);
-                    console.log(data.link);
-                    $('#match').html(data.name);
-                    $('#imgLink').html(data.link);
-                    showMatch=true;
-                });
+         
+</body>
 
-            }
-            else
-            $("#notCompleteModal").modal("show");
-    });
-
-        if (showMatch)
-            $("#successModal").modal("show");
-
-</script>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
-        </body>
 </html>

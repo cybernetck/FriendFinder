@@ -1,5 +1,8 @@
-/* home.html */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 #header {
     background-color:white;
@@ -14,7 +17,6 @@
     color:rgb(0,0,0);
 }
 
-/* survey.html */
 .top , .bottom {
     text-align: center;
     padding-top:10px;
@@ -22,20 +24,13 @@
 }
 
 .btn {
-    width:100%;
+    width:25%;
     padding: 5px;
 }
 
-/* .form-control::-webkit-input-placeholder {
-    opacity: .3;
-    transition-duration: 800ms;
-    }
-
-.form-control::-webkit-input-placeholder:focus {
-    color:blue;
-    opacity: .9;
-    transition-duration: 800ms;
-    } */
+#imgLink {
+    width: 10px;
+}
 
 .card-title .glyphicon {
     visibility:hidden;
@@ -52,6 +47,16 @@
     box-shadow: 2px 4px 4px grey;
     transition-duration: 500ms;
 }
+.modal-dialog{
+    padding-top:200px;
+}
+
+/* .modal-body > #imgLink {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 .card:hover{
   
         box-shadow: 9px 12px 10px;
