@@ -40,7 +40,7 @@
     </div>
 
     <hr/>
-
+<div class="container-fluid">
     <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <div class="modal fade" id="notCompleteModal" tabindex="-1" role="dialog" aria-labelledby="notCompleteLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -72,7 +72,7 @@
                     </h2>
                 </div>
                 <div class="modal-body">
-                    <h3> Please complete the servey </h3>
+                    <h3> Please complete the survey </h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Close</button>
@@ -362,7 +362,7 @@
                             console.log(data.link);
                             if (data.total){
                                 $('#matchName').html(data.name);
-                                $('#imgLink').html("<img src=" + "'" + data.link + "'" + +" height=175px"+">");
+                                $('#imgLink').html("<img src=" + "'" + data.link + "'" +">");
                                 $("#resultModal").modal('show');
                             }
                             else
