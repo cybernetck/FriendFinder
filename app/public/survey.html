@@ -365,16 +365,13 @@
                     question8: $("#question8").val().trim(),
                     question9: $("#question9").val().trim()
                 };
-                if (!checkFields){
+
+                if (!checkFields()){
                     $("#notCompleteModal").modal('show');
                 }
-                else if (checkFields) {
+                else if (checkFields()) {
                     $.post("/api/friends", userSurvey)
                         .done(function (data) {
-                            console.log(data);
-                            console.log("data.name...", data.name);
-                            console.log("data.link...", data.link);
-                            console.log("data.total...", data.total);
                             if (data.total !== undefined){
                                 $('#matchName').html(data.name);
                                 $('#imgLink').html("<img src=" + "'" + data.link + "'" +">");
