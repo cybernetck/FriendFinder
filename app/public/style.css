@@ -1,32 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
 body {
     font-family: 'Roboto', sans-serif;
 }
 
 #header {
-    background-color:white;
-    color:black;
-    text-align:center;
+    background-color: white;
+    color: black;
+    text-align: center;
 }
+
 #main {
     height: 500px;
     width: 80%;
     margin: 0 auto;
-    background-image: url(https://s19.postimg.org/4hjvd5kj7/video_Game_Backround.jpg);
+    background-image: url(https://s19.postimg.cc/4hjvd5kj7/video_Game_Backround.jpg);
     padding-top: 100px;
     text-align: center;
-    color:white;
+    color: white;
 }
 
-.top , .bottom {
+.top,
+.bottom {
     text-align: center;
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .btn {
-    width:25%;
+    width: 25%;
     padding: 5px;
 }
 
@@ -35,44 +36,44 @@ body {
 }
 
 .card-title .glyphicon {
-    visibility:hidden;
-    float:right;
+    visibility: hidden;
+    float: right;
 }
 
 .card {
     width: 40rem;
     max-width: 100%;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-    margin-bottom:10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
     box-shadow: 2px 4px 4px grey;
     transition-duration: 500ms;
 }
 
-#imgLink{
-    width:100%;
+#imgLink {
+    width: 100%;
     height: 100%;
 }
 
 img {
     max-width: 250px;
     margin: 0 auto;
-} 
-
-.modal-dialog{
-   padding-top:200px;
 }
 
-.modal-body  {
-text-align: center;
+.modal-dialog {
+    padding-top: 200px;
 }
 
-.card:hover{
-  
-        box-shadow: 9px 12px 10px;
-        transition-duration: 1000ms;
+.modal-body {
+    text-align: center;
 }
+
+.card:hover {
+    box-shadow: 9px 12px 10px;
+    transition-duration: 1000ms;
+}
+
 .chosen-select {
     margin: 0 auto;
 }
