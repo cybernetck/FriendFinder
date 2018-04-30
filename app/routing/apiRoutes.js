@@ -72,6 +72,7 @@ module.exports = function (app) {
                         link: friends[j].imgURL,
                         total: friends[j].total
                     }
+   
                 }
             }
         }

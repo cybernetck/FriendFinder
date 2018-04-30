@@ -372,9 +372,10 @@
                     $.post("/api/friends", userSurvey)
                         .done(function (data) {
                             console.log(data);
-                            console.log(data.name);
-                            console.log(data.link);
-                            if (data.total){
+                            console.log("data.name...", data.name);
+                            console.log("data.link...", data.link);
+                            console.log("data.total...", data.total);
+                            if (data.total !== undefined){
                                 $('#matchName').html(data.name);
                                 $('#imgLink').html("<img src=" + "'" + data.link + "'" +">");
                                 $("#resultModal").modal('show');
