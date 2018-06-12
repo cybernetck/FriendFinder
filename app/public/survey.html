@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- KK: Consistent indentation and code formatting would be helpful in making this a bit more readable. Not a big deal, but something to consider. Also, this would make it easier to see if you have unclosed divs or something. -->
+
 <html>
 <head>
 
@@ -9,18 +11,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     
+    <!-- KK: You're pulling this version of jQuery and also 1.11.1 below -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     
     <!-- Latest compiled and minified CSS & JS -->
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- KK: You're pulling this version of jQuery and also 3.2.1.slim above -->
     <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- KK: Is this actually being used? I don't see any instances of Popper being instantiated in the code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
     
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -308,6 +315,9 @@
              * */
             function reset() {
 
+                // KK: Let's look at if there is a way we can clean this up a bit to 
+                // make it a little less repetetive
+
                 $("#question1").val('');
                 $("#question2").val('');
                 $("#question3").val('');
@@ -331,6 +341,10 @@
             /**
              * Assignment function - check if any of the survey fields are blank
              */
+            
+            // KK: Let's look at if there is a way we can clean this up a bit to 
+            // make it a little less repetetive
+
             var checkFields = function () {
                 if ($("#question1").val() !== '' &&
                     $("#question2").val() !== '' &&
@@ -354,6 +368,9 @@
 
                 event.preventDefault();
 
+                // KK: Let's look at if there is a way we can clean this up a bit to 
+                // make it a little less repetetive
+
                 userSurvey = {
                     question1: $("#question1").val().trim(),
                     question2: $("#question2").val().trim(),
@@ -371,23 +388,19 @@
                 }
                 else if (checkFields()) {
                     $.post("/api/friends", userSurvey)
-                        .done(function (data) {
-                            if (data.total !== undefined){
-                                $('#matchName').html(data.name);
-                                $('#imgLink').html("<img src=" + "'" + data.link + "'" +">");
-                                $("#resultModal").modal('show');
-                            }
-                            else
-                                $("#notCompleteModal").modal('show');
-                        });
-
+                    .done(function (data) {
+                        if (data.total !== undefined){
+                            $('#matchName').html(data.name);
+                            $('#imgLink').html("<img src=" + "'" + data.link + "'" +">");
+                            $("#resultModal").modal('show');
+                        }
+                        else
+                            $("#notCompleteModal").modal('show');
+                    });
                 }
-               
             });
 
         </script>
-
-         
 </body>
 
 </html>
