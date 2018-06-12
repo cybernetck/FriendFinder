@@ -1,7 +1,13 @@
 var friends = require("../data/friends.js");
 
 module.exports = function (app) {
+    function compare(a,b) {
+        return a.total - b.total;
+    }
+    
 
+    // KK: Is this just supporting the 'View Data' button?
+    // Or does the app call this in somewhere I'm not seeing?
     app.get("/api/friends/", function (req, res) {
 
         res.json(friends);
@@ -17,6 +23,14 @@ module.exports = function (app) {
             imgURL: '',
             difference: 0
         };
+
+        // KK: Could we just flatten this array a bit?
+        //  var userInput = [
+        //    newListObj.question1,
+        //    newListObj.question1,
+        //    newListObj.question1,
+        //    ...
+        //  ]
 
         var userInput = [
             {
@@ -62,6 +76,16 @@ module.exports = function (app) {
             link: friends[0].imgURL,
             total: friends[0].total
         }
+
+        
+        // KK: Nested for loops are almost always a sign of code that can be made more efficient
+        // Especially when a third nested if. In this case, we can look at a sort function
+
+        // friends.sort(function(a, b){
+        //    return a.total - b.total;
+        // });
+        //
+        // return friends[0];
 
         for (var i = 0; i < friends.length; ++i) {
             for (var j = 1; j < friends.length; ++j) {
