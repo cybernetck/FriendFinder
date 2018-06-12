@@ -1,11 +1,6 @@
 var friends = require("../data/friends.js");
 
 module.exports = function (app) {
-    function compare(a,b) {
-        return a.total - b.total;
-    }
-    
-
     // KK: Is this just supporting the 'View Data' button?
     // Or does the app call this in somewhere I'm not seeing?
     app.get("/api/friends/", function (req, res) {
