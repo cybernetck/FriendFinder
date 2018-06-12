@@ -82,6 +82,8 @@ module.exports = function (app) {
         //
         // return friends[0];
 
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
         for (var i = 0; i < friends.length; ++i) {
             for (var j = 1; j < friends.length; ++j) {
 
